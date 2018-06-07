@@ -1,9 +1,9 @@
 #!/bin/sh
-#SBATCH --time=2:00:00   # Run time in hh:mm:ss
-#SBATCH --mem-per-cpu=1024       # Maximum memory required per CPU (in megabytes)
+#SBATCH --time=10:00:00   # Run time in hh:mm:ss
+#SBATCH --mem-per-cpu=2048       # Maximum memory required per CPU (in megabytes)
 #SBATCH --job-name=trimmomatic
-#SBATCH --error=$WORK/trimmomatic/slurm/job.%J.err
-#SBATCH --output=$WORK/trimmomatic/slurm/slurm/job.%J.out
+#SBATCH --error=job.%J.err
+#SBATCH --output=job.%J.out
 module load trimmomatic/0.36
 trimmomatic PE -phred33 $HOME/data/HSS12071M1_pool_S24_L007_R1_001.fastq.gz $HOME/data/HSS12071M1_pool_S24_L007_R2_001.fastq.gz $WORK/trimmomatic/HSS12071M1_pool_S24_L007_R1_001.paired.fastq.gz $WORK/trimmomatic/HSS12071M1_pool_S24_L007_R1_001.unpaired.fastq.gz $WORK/trimmomatic/HSS12071M1_pool_S24_L007_R2_001.paired.fastq.gz $WORK/trimmomatic/HSS12071M1_pool_S24_L007_R2_001.unpaired.fastq.gz ILLUMINACLIP:TruSeq3-PE.fa:3:30:10 SLIDINGWINDOW:4:15 MAXINFO:50:0.5 LEADING:3 TRAILING:3 MINLEN:100 > $WORK/trimmomatic/trimlog/HSS12071M1.trimlog
 trimmomatic PE -phred33 $HOME/data/Silverman37712B1_S21_L007_R1_001.fastq.gz $HOME/data/Silverman37712B1_S21_L007_R2_001.fastq.gz $WORK/trimmomatic/Silverman37712B1_S21_L007_R1_001.paired.fastq.gz $WORK/trimmomatic/Silverman37712B1_S21_L007_R1_001.unpaired.fastq.gz $WORK/trimmomatic/Silverman37712B1_S21_L007_R2_001.paired.fastq.gz $WORK/trimmomatic/Silverman37712B1_S21_L007_R2_001.unpaired.fastq.gz ILLUMINACLIP:TruSeq3-PE.fa:3:30:10 SLIDINGWINDOW:4:15 MAXINFO:50:0.5 LEADING:3 TRAILING:3 MINLEN:100 > $WORK/trimmomatic/trimlog/Silverman37712B1_S21.trimlog
