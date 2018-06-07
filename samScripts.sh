@@ -1,3 +1,4 @@
+pd=`pwd`
 # download reference genome
 cd $HOME
 mkdir reference_genome
