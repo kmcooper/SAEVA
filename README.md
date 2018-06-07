@@ -16,6 +16,7 @@
    #### b: store FastQC reports for these original files in the folder name FastQC-befor-trimmomatic
    ### cd $WORK
 ### git clone https://github.com/kmcooper/SAEVA.git
+### cd SAEVA
    #### to run the slurm use this command:
    #### sh trimScript.sh
    ##### the trimmomatic aout put must used again for FastQC to see the result of trimmomatic in the folder name FastQC-after-trimmomatic
