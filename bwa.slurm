@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH --time=7:00:00          # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=2048       # Maximum memory required per CPU (in megabytes)
-#SBATCH --job-name=SamFiles
+#SBATCH --job-name=bwa
 #SBATCH --error=job.%J.err
 #SBATCH --output=job.%J.out
 module load bwa/0.7
