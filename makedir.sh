@@ -17,3 +17,5 @@ cd ..
 mkdir samfiles
 ## make bam
 mkdir bamfiles
+mkdir flagsam
+mkdir sortsam
