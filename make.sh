@@ -12,5 +12,6 @@ cd $WORK
 mkdir trimmomatic
 cd trimmomatic
 mkdir trimlog
+cd ..
 ## make BWA
 mkdir samfiles
