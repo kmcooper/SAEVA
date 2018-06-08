@@ -15,3 +15,5 @@ mkdir trimlog
 cd ..
 ## make BWA
 mkdir samfiles
+## make bam
+mkdir bamfiles
