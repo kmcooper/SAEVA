@@ -18,10 +18,11 @@
 #### git clone https://github.com/kmcooper/SAEVA.git
 #### cd SAEVA
    ##### to run the slurm use this command:
-   #### sh AllScript.sh
+   #### sh trimScript.sh
    ###### the trimmomatic out put must used again for FastQC to see the result of trimmomatic in the folder name FastQC-after-trimmomatic
 ## Third step:
 ##### Read Mapping with BWA
-
+##### to run the slurm use this command:
+#### sh samScript.sh
         
   
