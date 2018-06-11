@@ -42,7 +42,7 @@ samtools flagstat $WORK/bamfiles/aln_Silverman99382M1_S15.bam> $WORK/flagsam/aln
 samtools sort $WORK/bamfiles/aln_Silverman99382M1_S15.bam -O bam -o $WORK/sortsam/aln_Silverman99382M1_S15.sorted.bam
 
 samtools view -bt $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/samfiles/aln_Silverman99624A1_S20.sam >$WORK/bamfiles/aln_Silverman99624A1_S20.bam
-samtools flagstat $WORK/bamfiles/aln_Silverman99624A1_S20.bam> $WORK/flagsam/aaln_Silverman99624A1_S20.flagsam.log
+samtools flagstat $WORK/bamfiles/aln_Silverman99624A1_S20.bam> $WORK/flagsam/aln_Silverman99624A1_S20.flagsam.log
 samtools sort $WORK/bamfiles/aln_Silverman99624A1_S20.bam -O bam -o $WORK/sortsam/aln_Silverman99624A1_S20.sorted.bam
 
 samtools view -bt $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/samfiles/aln_Silverman99624D1_S16.sam >$WORK/bamfiles/aln_Silverman99624D1_S16.bam
