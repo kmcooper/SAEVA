@@ -14,3 +14,7 @@ mkdir samfiles
 mkdir bamfiles
 mkdir flagsam
 mkdir sortsam
+mkdir picard
+cd picard
+mkdir picardlog
+cd ..
