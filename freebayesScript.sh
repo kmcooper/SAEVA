@@ -1,1 +1,1 @@
-sh freebayestrim.slurm
+sh freebayes.slurm
