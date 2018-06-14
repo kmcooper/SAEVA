@@ -4,6 +4,6 @@
 ##### sh trimScript.sh
 ##### sh bwaScript.sh
 ##### sh bamScript.sh
-##### sh picard.sh
+##### sh picardScript.sh
 ##### sh freebayesScript.sh
 
