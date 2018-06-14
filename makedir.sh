@@ -18,3 +18,6 @@ mkdir picard
 cd picard
 mkdir picardlog
 cd ..
+mkdir softwares
+cd softwares
+mkdir bwa
