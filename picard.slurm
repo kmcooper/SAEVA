@@ -6,6 +6,7 @@
 #SBATCH --output=job.%J.out
 
 module load picard/2.18
+
 picard MarkDuplicates I=$WORK/sortsam/aln_HSS12071M1_pool_S24.sorted.bam O=$WORK/picard/HSS12071M1.picard.bam M=$WORK/picard/picardlog/HSS12071M1.picard.log;
 picard MarkDuplicates I=$WORK/sortsam/aln_Silverman37712B1_S21.sorted.bam O=$WORK/picard/Silverman37712B1_S21.picard.bam M=$WORK/picard/picardlog/Silverman37712B1_S21.picard.log;
 picard MarkDuplicates I=$WORK/sortsam/aln_Silverman60383B1_S18.sorted.bam O=$WORK/picard/Silverman60383B1_S18.picard.bam M=$WORK/picard/picardlog/Silverman60383B1_S18.picard.log;
