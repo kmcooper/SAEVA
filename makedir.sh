@@ -15,6 +15,7 @@ mkdir bamfiles
 mkdir flagsam
 mkdir sortsam
 mkdir picard
+mkdir freebayes
 cd picard
 mkdir picardlog
 cd ..
