@@ -5,25 +5,25 @@
 #SBATCH --error=job.%J.err
 #SBATCH --output=job.%J.out
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/HSS12071M1.picard.bam >$WORK/freebayes/HSS12071M1.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/HSS12071M1.picard.bam >$WORK/freebayesoutput/HSS12071M1.vcf;
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman37712B1_S21.picard.bam >$WORK/freebayes/Silverman37712B1_S21.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman37712B1_S21.picard.bam >$WORK/freebayesoutput/Silverman37712B1_S21.vcf;
 
-$WORK/freebayes/bin/freebayes -f /$HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman60383B1_S18.picard.bam >$WORKfreebayes/Silverman60383B1_S18.vcf;
+$WORK/freebayes/bin/freebayes -f /$HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman60383B1_S18.picard.bam >$freebayesoutput/Silverman60383B1_S18.vcf;
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman62129B1_S17.picard.bam >$WORK/freebayes/Silverman62129B1_S17.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman62129B1_S17.picard.bam >$WORK/freebayesoutput/Silverman62129B1_S17.vcf;
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman79414A1_S23.picard.bam >$WORK/freebayes/Silverman79414A1_S23.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman79414A1_S23.picard.bam >$WORK/freebayesoutput/Silverman79414A1_S23.vcf;
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman93954A1_S19.picard.bam >$WORK/freebayes//Silverman93954A1_S19.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman93954A1_S19.picard.bam >$WORK/freebayesoutput//Silverman93954A1_S19.vcf;
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman94232M1_S14.picard.bam >$WORK/freebayes/Silverman94232M1_S14.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman94232M1_S14.picard.bam >$WORK/freebayesoutput/Silverman94232M1_S14.vcf;
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa /$WORK/picard/Silverman99382B1_S22.picard.bam >$WORK/freebayes/Silverman99382B1_S22.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa /$WORK/picard/Silverman99382B1_S22.picard.bam >$WORK/freebayesoutput/Silverman99382B1_S22.vcf;
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman99382M1_S15.picard.bam >$WORK/freebayes/Silverman99382M1_S15.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman99382M1_S15.picard.bam >$WORK/freebayesoutput/Silverman99382M1_S15.vcf;
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman99624A1_S20.picard.bam >$WORK/freebayes/Silverman99624A1_S20.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman99624A1_S20.picard.bam >$WORK/freebayesoutput/Silverman99624A1_S20.vcf;
 
-$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman99624D1_S16.picard.bam >$WORK/freebayes/Silverman99624D1_S16.vcf;
+$WORK/freebayes/bin/freebayes -f $HOME/reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/picard/Silverman99624D1_S16.picard.bam >$WORK/freebayesoutput/Silverman99624D1_S16.vcf;
 
