@@ -21,5 +21,4 @@ mkdir picardlog
 cd ..
 mkdir softwares
 cd softwares
-mkdir freebayes
 mkdir bwa
