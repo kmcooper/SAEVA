@@ -16,6 +16,9 @@ mkdir flagsam
 mkdir sortsam
 mkdir picard
 mkdir freebayesoutput
+mkdir vcffilterq5000
+mkdir bcfoutput
+mkdir vcffilterq5000-dp250
 cd picard
 mkdir picardlog
 cd ..
