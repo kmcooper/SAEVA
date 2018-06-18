@@ -8,3 +8,4 @@
 ##### sh freebayesScript.sh
 ##### sh bcf-vcfScript.sh
 ##### sh low-highpersisterScript.sh
+##### sh edit-Chromosome.sh
