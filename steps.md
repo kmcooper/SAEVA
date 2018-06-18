@@ -6,5 +6,5 @@
 ##### sh bamScript.sh
 ##### sh picardScript.sh
 ##### sh freebayesScript.sh
-##### sh bcfScript.sh
-
+##### sh bcf-vcfScript.sh
+##### sh low-highpersisterScript.sh
