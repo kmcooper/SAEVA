@@ -1,1 +1,1 @@
-sbatch persitance.slurm
+sbatch persister.slurm
