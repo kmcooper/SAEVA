@@ -23,8 +23,8 @@ mkdir bcfoutput
 mkdir vcffilterq5000-dp250
 cd picard
 mkdir picardlog
-cd ..
-mkdir softwares
-cd softwares
+cd $WORK
+mkdir SAEVA_softwares
+cd SAEVA_softwares
 mkdir freebayes
 mkdir bwa
