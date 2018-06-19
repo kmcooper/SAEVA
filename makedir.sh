@@ -26,3 +26,4 @@ mkdir softwares
 cd softwares
 mkdir freebayes
 mkdir bwa
+mkdir vcftools
