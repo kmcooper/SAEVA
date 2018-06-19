@@ -1,7 +1,7 @@
 pd= `pwd`
 cd $HOME
 mkdir data
-mkdir reference_genome
+mkdir SAEVA_reference_genome
 cd $WORK
 mkdir SAEVA_outputs
 cd SAEVA_outputs
