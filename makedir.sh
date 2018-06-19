@@ -3,6 +3,8 @@ cd $HOME
 mkdir data
 mkdir reference_genome
 cd $WORK
+mkdir SAEVA_outputs
+cd SAEVA_outputs
 ## make trimmomatic directory
 mkdir trimmomatic
 cd trimmomatic
@@ -26,4 +28,3 @@ mkdir softwares
 cd softwares
 mkdir freebayes
 mkdir bwa
-mkdir vcftools
