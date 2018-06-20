@@ -7,7 +7,7 @@
 
 module load bcftools/1.8
 
-$WORK/SAEVA_softwares/freebayes/freebayes/vcflib/bin/vcffilter -f "QUAL > 5000" $WORK/SAEVA_outputs/freebayesoutput/HSS12071M1.vcf > $WORKSAEVA_outputs/vcffilterq5000/HSS12071M1_q5000.vcf 
+$WORK/SAEVA_softwares/freebayes/freebayes/vcflib/bin/vcffilter -f "QUAL > 5000" $WORK/SAEVA_outputs/freebayesoutput/HSS12071M1.vcf > $WORK/SAEVA_outputs/vcffilterq5000/HSS12071M1_q5000.vcf 
 $WORK/SAEVA_softwares/freebayes/freebayes/vcflib/bin/vcffilter -f "DP > 250" $WORK/SAEVA_outputs/vcffilterq5000/HSS12071M1_q5000.vcf > $WORK/SAEVA_outputs/vcffilterq5000-dp250/HSS12071M1_q5000_dp250.vcf;
 bcftools view -Ob $WORK/SAEVA_outputs/vcffilterq5000-dp250/HSS12071M1_q5000_dp250.vcf >$WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz;
 bcftools index $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz;
