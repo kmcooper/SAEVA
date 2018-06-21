@@ -23,6 +23,17 @@ mkdir bcfoutput
 mkdir vcffilterq5000-dp250
 cd picard
 mkdir picardlog
+## make snEff
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff_high0
+mkdir snpEff_high1
+mkdir snpEff_high2
+mkdir snpEff_high3
+mkdir snpEff_high4
+mkdir snpEff_low0
+mkdir snpEff_low1
+
 cd $WORK
 mkdir SAEVA_softwares
 cd SAEVA_softwares
