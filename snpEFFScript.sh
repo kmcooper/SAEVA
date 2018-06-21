@@ -1,1 +1,2 @@
 
+sbatch snpEFF.slurm
