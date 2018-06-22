@@ -2,8 +2,8 @@
 #SBATCH --time=15:00:00   # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=8192     # Maximum memory required per CPU (in megabytes)
 #SBATCH --job-name=samsortflag
-#SBATCH --error=job.%J.err
-#SBATCH --output=job.%J.out
+#SBATCH --error=samsortflag.%J.err
+#SBATCH --output=samsortflag.%J.out
 module load samtools/1.6
 samtools view -bt $HOME/SAEVA_reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/SAEVA_outputs/samfiles/aln_HSS12071M1_pool_S24.sam >$WORK/SAEVA_outputs/bamfiles/aln_HSS12071M1_pool_S24.bam
 samtools flagstat $WORK/SAEVA_outputs/bamfiles/aln_HSS12071M1_pool_S24.bam> $WORK/SAEVA_outputs/flagsam/aln_HSS12071M1_pool_S24.flagstat.log
