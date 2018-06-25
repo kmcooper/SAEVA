@@ -41,10 +41,10 @@ samtools view -bt $HOME/SAEVA_reference_genome/Staphylococcus_aureus_NCTC_8325/N
 samtools flagstat $WORK/SAEVA_outputs/bamfiles/aln_Silverman99382M1_S15.bam> $WORK/SAEVA_outputs/flagsam/aln_Silverman99382M1_S15.flagstat.log
 samtools sort $WORK/SAEVA_outputs/bamfiles/aln_Silverman99382M1_S15.bam -O bam -o $WORK/SAEVA_outputs/sortsam/aln_Silverman99382M1_S15.sorted.bam
 
-samtools view -bt $HOME/SAEVA_reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/SAEVA_outputs/samfiles/aln_Silverman99624A1_S20.sam >$WORK/SAEVA_outputs/bamfiles/aln_Silverman99624A1_S20.bam
-samtools flagstat $WORK/SAEVA_outputs/bamfiles/aln_Silverman99624A1_S20.bam> $WORK/SAEVA_outputs/flagsam/aln_Silverman99624A1_S20.flagstat.log
-samtools sort $WORK/SAEVA_outputs/bamfiles/aln_Silverman99624A1_S20.bam -O bam -o $WORK/SAEVA_outputs/sortsam/aln_Silverman99624A1_S20.sorted.bam
+samtools view -bt $HOME/SAEVA_reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/SAEVA_outputs/samfiles/aln_Silverman99624A1_S16.sam >$WORK/SAEVA_outputs/bamfiles/aln_Silverman99624A1_S20.bam
+samtools flagstat $WORK/SAEVA_outputs/bamfiles/aln_Silverman99624A1_S16.bam> $WORK/SAEVA_outputs/flagsam/aln_Silverman99624A1_S16.flagstat.log
+samtools sort $WORK/SAEVA_outputs/bamfiles/aln_Silverman99624A1_S16.bam -O bam -o $WORK/SAEVA_outputs/sortsam/aln_Silverman99624A1_S16.sorted.bam
 
-samtools view -bt $HOME/SAEVA_reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/SAEVA_outputs/samfiles/aln_Silverman99624D1_S16.sam >$WORK/SAEVA_outputs/bamfiles/aln_Silverman99624D1_S16.bam
-samtools flagstat $WORK/SAEVA_outputs/bamfiles/aln_Silverman99624D1_S16.bam> $WORK/SAEVA_outputs/flagsam/aln_Silverman99624D1_S16.flagstat.log
-samtools sort $WORK/SAEVA_outputs/bamfiles/aln_Silverman99624D1_S16.bam -O bam -o $WORK/SAEVA_outputs/sortsam/aln_Silverman99624D1_S16.sorted.bam
+samtools view -bt $HOME/SAEVA_reference_genome/Staphylococcus_aureus_NCTC_8325/NCBI/2006-02-13/Sequence/BWAIndex/genome.fa $WORK/SAEVA_outputs/samfiles/aln_Silverman99624D1_S20.sam >$WORK/SAEVA_outputs/bamfiles/aln_Silverman99624D1_S16.bam
+samtools flagstat $WORK/SAEVA_outputs/bamfiles/aln_Silverman99624D1_S20.bam> $WORK/SAEVA_outputs/flagsam/aln_Silverman99624D1_S20.flagstat.log
+samtools sort $WORK/SAEVA_outputs/bamfiles/aln_Silverman99624D1_S20.bam -O bam -o $WORK/SAEVA_outputs/sortsam/aln_Silverman99624D1_S20.sorted.bam
