@@ -23,6 +23,7 @@ mkdir bcfoutput
 mkdir vcffilterq5000-dp250
 cd picard
 mkdir picardlog
+cd ..
 ## make snEff
 mkdir snpEff_outputs
 cd snpEff_outputs
