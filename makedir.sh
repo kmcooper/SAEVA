@@ -5,6 +5,7 @@ mkdir SAEVA_reference_genome
 cd $WORK
 mkdir SAEVA_outputs
 cd SAEVA_outputs
+mkdir snpEff_outputs
 ## make trimmomatic directory
 mkdir trimmomatic
 cd trimmomatic
