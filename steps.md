@@ -9,4 +9,4 @@
 ##### sh bcf-vcfScript.sh
 ##### sh low-highpersisterScript.sh
 ##### sh edit-Chromosome.sh
-##### sh snpEFF.sh
+##### sh snpEFFScript.sh
