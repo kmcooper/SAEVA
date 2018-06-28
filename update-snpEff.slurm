@@ -40,7 +40,7 @@ mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-summary/update-snpEff_low0_summary.html
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/update/update-low/0001.vcf > $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_low1.ann.vcf
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs/supdate-npEff-gene/update-snpEff_low1_genes.txt
+mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-gene/update-snpEff_low1_genes.txt
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-summary/update-snpEff_low1_summary.html
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/update/update-low/0002.vcf > $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_low2.ann.vcf
