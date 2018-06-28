@@ -52,7 +52,6 @@ $WORK/SAEVA_softwares/freebayes/freebayes/vcflib/bin/vcffilter -f "DP > 250" $WO
 bcftools view -Ob $WORK/SAEVA_outputs/vcffilterq5000-dp250/Silverman79414A1_S23_q5000_dp250.vcf >$WORK/SAEVA_outputs/bcfoutput/Silverman79414A1_S23_q5000_dp250.vcf.gz;
 bcftools index $WORK/SAEVA_outputs/bcfoutput/Silverman79414A1_S23_q5000_dp250.vcf.gz;
 
-
 $WORK/SAEVA_softwares/freebayes/freebayes/vcflib/bin/vcffilter -f "QUAL > 5000" $WORK/SAEVA_outputs/freebayesoutput/Silverman94232M1_S14.vcf > $WORK/SAEVA_outputs/vcffilterq5000/Silverman94232M1_S14_q5000.vcf
 $WORK/SAEVA_softwares/freebayes/freebayes/vcflib/bin/vcffilter -f "DP > 250" $WORK/SAEVA_outputs/vcffilterq5000/Silverman94232M1_S14_q5000.vcf > $WORK/SAEVA_outputs/vcffilterq5000-dp250/Silverman94232M1_S14_q5000_dp250.vcf;
 bcftools view -Ob $WORK/SAEVA_outputs/vcffilterq5000-dp250/Silverman94232M1_S14_q5000_dp250.vcf > $WORK/SAEVA_outputs/bcfoutput/Silverman94232M1_S14_q5000_dp250.vcf.gz;
