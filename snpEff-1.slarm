@@ -1,3 +1,4 @@
+#!/bin/sh
 ##SBATCH --mem-per-cpu=8192       # Maximum memory required per CPU (in megabytes)
 #SBATCH --job-name=update-snpEFF
 #SBATCH --error=update-snpEFF.%J.err
