@@ -9,3 +9,10 @@ mkdir snpEff_outputs
 cd snpEff_outputs
 mkdir snpEff-gene
 mkdir snpEff-summary
+
+mkdir 2
+cd 2
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff-gene
+mkdir snpEff-summary
