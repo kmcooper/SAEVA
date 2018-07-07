@@ -5,7 +5,7 @@ mkdir 6highs4lows
 cd 6highs4lows
 mkdir 1
 cd 1
-mkdir snpEff-outputs
-cd snpEff-outputs
+mkdir snpEff_outputs
+cd snpEff_outputs
 mkdir snpEff-genes
 mkdir snpEff-summary
