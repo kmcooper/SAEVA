@@ -1,5 +1,3 @@
-7high3lows
-
 #!/bin/sh
 #SBATCH --time=05:00:00   # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=8192      # Maximum memory required per CPU (in megabytes)
