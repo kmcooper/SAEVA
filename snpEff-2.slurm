@@ -10,7 +10,7 @@ java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcu
 mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/snpEff-gene/2-snpEff_high0_genes.txt
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/snpEff-summary/2-snpEff_high0_summary.html
 
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/changes/6highs4lows/2/high/0002.vcf > $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/2-snpEff_high1.ann.vcf
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/changes/6highs4lows/2/high/0001.vcf > $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/2-snpEff_high1.ann.vcf
 mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/snpEff-gene/2-snpEff_high1_genes.txt
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/snpEff-summary/2-snpEff_high1_summary.html
 
@@ -34,7 +34,7 @@ java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcu
 mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/snpEff-gene/2-snpEff_low0_genes.txt
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/snpEff-summary/2-snpEff_low0_summary.html
 
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/changes/6highs4lows/2/low/0002.vcf > $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/2-snpEff_low1.ann.vcf
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/changes/6highs4lows/2/low/0001.vcf > $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/2-snpEff_low1.ann.vcf
 mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/snpEff-gene/2-snpEff_low1_genes.txt
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/snpEff-summary/2-snpEff_low1_summary.html
 
