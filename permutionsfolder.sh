@@ -1,6 +1,22 @@
 cd $WORK/SAEVA_outputs/
 mkdir changes
 cd changes
+mkdir 7high3lows
+cd 7high3lows
+mkdir 1
+cd 1
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff-gene
+mkdir snpEff-summary
+cd ../../
+mkdir 2
+cd 2
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff-gene
+mkdir snpEff-summary
+cd ../../../
 mkdir 6highs4lows
 cd 6highs4lows
 mkdir 1
@@ -20,6 +36,14 @@ mkdir snpEff-summary
 cd ../../
 mkdir 3
 cd 3
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff-gene
+mkdir snpEff-summary
+
+cd ../../
+mkdir 4
+cd 4
 mkdir snpEff_outputs
 cd snpEff_outputs
 mkdir snpEff-gene
