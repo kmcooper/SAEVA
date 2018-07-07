@@ -1,4 +1,4 @@
-cd $WORK/SAVEA_outputs/
+cd $WORK/SAEVA_outputs/
 mkdir changes
 cd changes
 mkdir 6highs4lows
