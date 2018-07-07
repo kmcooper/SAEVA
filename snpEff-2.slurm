@@ -4,7 +4,7 @@
 #SBATCH --error=snpEFF2.%J.err
 #SBATCH --output=snpEFF2.%J.out
 
-module load java/2.8
+module load java/1.8
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/changes/6highs4lows/2/high/0000.vcf > $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/2-snpEff_high0.ann.vcf
 mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/changes/6highs4lows/2/snpEff_outputs/snpEff-gene/2-snpEff_high0_genes.txt
