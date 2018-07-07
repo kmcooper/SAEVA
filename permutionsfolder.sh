@@ -8,4 +8,4 @@ cd 1
 mkdir snpEff-outputs
 cd snpEff-outputs
 mkdir snpEff-genes
-mkdir snpeff-summary
+mkdir snpEff-summary
