@@ -7,5 +7,5 @@ mkdir 1
 cd 1
 mkdir snpEff_outputs
 cd snpEff_outputs
-mkdir snpEff-genes
+mkdir snpEff-gene
 mkdir snpEff-summary
