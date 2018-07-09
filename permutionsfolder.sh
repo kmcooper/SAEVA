@@ -23,6 +23,14 @@ mkdir snpEff_outputs
 cd snpEff_outputs
 mkdir snpEff-gene
 mkdir snpEff-summary
+cd ../../
+mkdir 4
+cd 4
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff-gene
+mkdir snpEff-summary
+
 
 cd ../../../
 mkdir 6highs4lows
