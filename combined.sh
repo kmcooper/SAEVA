@@ -1,6 +1,6 @@
 cd $WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/
-cat *.vcf | sort | grep -v '##'| grep -v '#'| unic -c >$WORK/SAEVA_outputs/changes/7high3lows/1/combined.txt;
-
+cat *.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/7high3lows/1/combined.txt;
+cat combined.txt |cut -f -5|uniq -c
 
 
 cd $WORK/SAEVA_outputs/changes/7high3lows/2/snpEff_outputs/
