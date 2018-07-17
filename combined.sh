@@ -41,6 +41,6 @@ cat $WORK/SAEVA_outputs/changes/6highs4lows/2/combined.txt |grep -w $result6 | u
 
 cd $WORK/SAEVA_outputs/changes/6highs4lows/3/snpEff_outputs/
 cat *.vcf | sort | grep -v '##'| grep -v '#'>$WORK/SAEVA_outputs/changes/6highs4lows/3/combined.txt;
-cat $WORK/SAEVA_outputs/changes/6highs4lows/1/combined.txt |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/changes/6highs4lows/13/countlines.txt
+cat $WORK/SAEVA_outputs/changes/6highs4lows/3/combined.txt |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/changes/6highs4lows/3/countlines.txt
 result7=$(cat $WORK/SAEVA_outputs/changes/6highs4lows/3/countlines.txt |grep -w "10"|cut -f2);
 cat $WORK/SAEVA_outputs/changes/6highs4lows/3/combined.txt |grep -w $result7| uniq -c > $WORK/SAEVA_outputs/changes/6highs4lows/3/results.txt
