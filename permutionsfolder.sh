@@ -65,3 +65,35 @@ mkdir snpEff_outputs
 cd snpEff_outputs
 mkdir snpEff-gene
 mkdir snpEff-summary
+
+cd ../../
+mkdir 5
+cd 5
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff-gene
+mkdir snpEff-summary
+
+cd ../../
+mkdir 6
+cd 6
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff-gene
+mkdir snpEff-summary
+
+cd ../../
+mkdir 7
+cd 7
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff-gene
+mkdir snpEff-summary
+
+cd ../../
+mkdir 8
+cd 8
+mkdir snpEff_outputs
+cd snpEff_outputs
+mkdir snpEff-gene
+mkdir snpEff-summary
