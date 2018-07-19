@@ -25,11 +25,7 @@ sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/changes/6highs4lows/7/low/0001.v
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/changes/6highs4lows/7/low/0002.vcf; 
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/changes/6highs4lows/7/low/0003.vcf; 
 
-#!/bin/sh
-##SBATCH --mem-per-cpu=8393       # Maximum memory required per CPU (in megabytes)
-#SBATCH --job-name=update-snpEFF
-#SBATCH --error=snpEFF3.%J.err
-#SBATCH --output=snpEFF3.%J.out
+
 module load java/1.8
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/changes/6highs4lows/7/high/0000.vcf > $WORK/SAEVA_outputs/changes/6highs4lows/7/snpEff_outputs/7-snpEff_high0.ann.vcf
