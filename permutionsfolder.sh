@@ -89,11 +89,3 @@ mkdir snpEff_outputs
 cd snpEff_outputs
 mkdir snpEff-gene
 mkdir snpEff-summary
-
-cd ../../
-mkdir 8
-cd 8
-mkdir snpEff_outputs
-cd snpEff_outputs
-mkdir snpEff-gene
-mkdir snpEff-summary
