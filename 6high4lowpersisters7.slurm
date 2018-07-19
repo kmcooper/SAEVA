@@ -5,7 +5,7 @@
 #SBATCH --error=persisters.%J.err
 #SBATCH --output=persisters.%J.out
 
-## included 24,23,21,20,18,17 as High
+## included 24,23,20,18,17,15 as High
 ## included 22,19,16,14 as low
 
 module load bcftools/1.8
