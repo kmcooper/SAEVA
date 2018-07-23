@@ -5,4 +5,4 @@
 #SBATCH --output=filter1.%J.out
 module load java/1.8
 cp $WORK/SAEVA_outputs/changes/7high3lows/1/results.txt $WORK/SAEVA_outputs/changes/7high3lows/1/results.vcf
-cat $WORK/SAEVA_outputs/changes/7high3lows/1/results.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \"((ANN[*].IMPACT = 'MODIFIER') | (ANN[*].IMPACT='MISSENSE'))"\  > $WORK/SAEVA_outputs/changes/7high3lows/1/filtered/filtered.vcf;
+cat $WORK/SAEVA_outputs/changes/7high3lows/1/results.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter " (ANN[*].IMPACT='MISSENSE') " > $WORK/SAEVA_outputs/changes/7high3lows/1/filtered.vcf;
