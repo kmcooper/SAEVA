@@ -1,6 +1,6 @@
 cd $WORK/SAEVA_outputs/update/update-snpEff_outputs/
 echo `pwd`
-cat *.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/update-snpEff_outputs/combined.txt;
+cat *.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/combined.txt;
 cat $WORK/SAEVA_outputs/update/combined.txt |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/update/countlines.txt
 result=$(cat $WORK/SAEVA_outputs/update/countlines.txt |grep -w "11"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
