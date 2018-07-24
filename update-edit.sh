@@ -8,4 +8,6 @@ sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-high/0006.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-low/0000.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-low/0001.vcf; 
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-low/0002.vcf; 
+sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-low/0003.vcf;
+
 
