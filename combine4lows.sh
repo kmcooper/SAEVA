@@ -1,6 +1,6 @@
 cd $WORK/SAEVA_outputs/update/update-snpEff_outputs/
 echo `pwd`
-cat *.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/combined4lows.ann.vcf;
+cat *_low*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/combined4lows.ann.vcf;
 cat $WORK/SAEVA_outputs/update/combined.txt |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/update/countlines4lows.txt
 result=$(cat $WORK/SAEVA_outputs/update/countlines4lows.txt |grep -w "4"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
