@@ -14,4 +14,5 @@ result=$(echo $result | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/update/combined7high.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/update/results7high.vcf
 filter=$(cat $WORK/SAEVA_outputs/update/results7high.vcf | cut -f2)
 filter=$(echo $filter | sed 's/ /|/g')
-cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | grep -w $filter > $WORK/SAEVA_outputs/update/common7high.ann.vcf
+cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | grep $filter > $WORK/SAEVA_outputs/update/common7high.ann.vcf
+#cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf |egrep -w $WORK/SAEVA_outputs/update/results7high.vcf > $WORK/SAEVA_outputs/update/common7high.ann.vcf
