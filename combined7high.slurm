@@ -13,6 +13,5 @@ result=$(cat $WORK/SAEVA_outputs/update/countlineshigh7.txt |grep -w "7"|cut -f2
 result=$(echo $result | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/update/combined7high.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/update/results7high.vcf
 filter=$(cat $WORK/SAEVA_outputs/update/results7high.vcf | cut -f2)
-filter=$(echo $result | sed 's/ /|/g')
-cd $WORK/SAEVA_outputs/update/update-snpEff_outputs/
-cat update-snpEff_high0.ann.vcf | grep -w $filter > $WORK/SAEVA_outputs/update/common7high.ann.vcf
+filter=$(echo $filter | sed 's/ /|/g')
+cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | grep -w $filter > $WORK/SAEVA_outputs/update/common7high.ann.vcf
