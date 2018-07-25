@@ -5,51 +5,10 @@
 #SBATCH --error=update_persisters.%J.err
 #SBATCH --output=update_persisters.%J.out
 
-module load bcftools/1.8
-bcftools isec $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman99624A1_S20_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman37712B1_S21_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman99382M1_S15_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman62129B1_S17_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman60383B1_S18_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman79414A1_S23_q5000_dp250.vcf.gz -p $WORK/SAEVA_outputs/update/update-high -n=7;
-
-sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-high/0000.vcf;
-sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-high/0001.vcf;
-sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-high/0002.vcf;
-sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-high/0003.vcf;
-sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-high/0004.vcf;
-sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-high/0005.vcf;
-sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/update/update-high/0006.vcf;
-
-module load java/1.8
-
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/update/update-high/0000.vcf > $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-gene/update-snpEff_high0_genes.txt
-mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/update/update-snpEff_outputs/snpEff-summary/update-snpEff_high0_summary.html
-
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/update/update-high/0001.vcf > $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high1.ann.vcf
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-gene/update-snpEff_high1_genes.txt
-mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-summary/update-snpEff_high1_summary.html
-
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/update/update-high/0002.vcf > $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high2.ann.vcf
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-gene/update-snpEff_high2_genes.txt
-mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-summary/update-snpEff_high2_summary.html
-
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/update/update-high/0003.vcf > $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high3.ann.vcf
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-gene/update-snpEff_high3_genes.txt
-mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-summary/update-snpEff_high3_summary.html
-
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/update/update-high/0004.vcf > $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high4.ann.vcf
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-gene/update-snpEff_high4_genes.txt
-mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-summary/update-snpEff_high4_summary.html
-
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/update/update-high/0005.vcf > $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high5.ann.vcf
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-gene/update-snpEff_high5_genes.txt
-mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-summary/update-snpEff_high5_summary.html
-
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/update/update-high/0006.vcf > $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high6.ann.vcf
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-gene/update-snpEff_high6_genes.txt
-mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff-summary/update-snpEff_high6_summary.html
-
 cd $WORK/SAEVA_outputs/update/update-snpEff_outputs/
 echo `pwd`
-cat *.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/combinedhigh.vcf;
+cat *.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/combined7high.vcf;
 cat $WORK/SAEVA_outputs/update/combinedhigh.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/update/countlineshigh7.txt
 result=$(cat $WORK/SAEVA_outputs/update/countlineshigh7.txt |grep -w "7"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
-cat $WORK/SAEVA_outputs/update/combinedhigh.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/update/resultshigh.vcf
+cat $WORK/SAEVA_outputs/update/combined7high.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/update/results7high.vcf
