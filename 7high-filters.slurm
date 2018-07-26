@@ -20,11 +20,19 @@ cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf
 cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/update/header.vcf;
 cat $WORK/SAEVA_outputs/update/header.vcf $WORK/SAEVA_outputs/update/tempcommon7high.ann.vcf> $WORK/SAEVA_outputs/update/common7high.ann.vcf;
 rm $WORK/SAEVA_outputs/update/header.vcf
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'HIGH')"\ > $WORK/SAEVA_outputs/update/filter/high-misssens-7high.filter.vcf;
-
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT='MODIFIER')"\ | grep -v '##'> $WORK/SAEVA_outputs/update/filter/modifier-7high.filter.vcf;
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'HIGH') | (ANN[*].IMPACT='MISSENSE'))"\ | grep -v '##'> $WORK/SAEVA_outputs/update/filter/high-misssens-7high.filter.vcf;
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODERATE') | (ANN[*].IMPACT='MISSENSE'))"\ | grep -v '##'> $WORK/SAEVA_outputs/update/filter/moderate-misssens-7high.filter.vcf;
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'HIGH') | (ANN[*].IMPACT='MISSENSE'))"\ | grep -v '##'> $WORK/SAEVA_outputs/update/filter/high-and-misssens-7high.filter.vcf;
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'HIGH')"\ | grep -v '##'> $WORK/SAEVA_outputs/update/filter/high-7high.filter.vcf;
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT='MISSENSE')"\| grep -v '##' > $WORK/SAEVA_outputs/update/filter/misssens-7high.filter.vcf;
+cd $WORK/SAEVA_outputs/update/filter/
+mkdir textfiles
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'MODERATE')"\ > $WORK/SAEVA_outputs/update/filter/high-moderate-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/high-moderate-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/text/high-moderate-7high.txt;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT='MODIFIER')"\ > $WORK/SAEVA_outputs/update/filter/modifier-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/modifier-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/text/modifier-7high.txt;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'HIGH') | (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/high-misssens-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/high-misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/text/high-misssens-7high.txt;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODERATE') | (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/moderate-misssens-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/moderate-misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/text/moderate-misssens-7high.txt;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'HIGH') | (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/high-and-misssens-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/high-misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/text/high-misssens-7high.txt;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'HIGH')"\ > $WORK/SAEVA_outputs/update/filter/high-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/high-and-misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/text/high-and-misssens-7high.txt;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT='MISSENSE')"\ > $WORK/SAEVA_outputs/update/filter/misssens-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/text/misssens-7high.txt;
