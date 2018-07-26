@@ -10,10 +10,10 @@ mkdir filter
 cd snpEff_outputs/
 cat *.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/combined-7high3lows.vcf;
 cat $WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/combined-7high3lows.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/countlines-7high3lows.txt;
-result=$(cat $WORK/SAEVA_outputs/update/countlines-7high3lows.txt |grep -w "10"|cut -f2);
+result=$(cat $WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/countlines-7high3lows.txt |grep -w "10"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/combined-7high3lows.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/results-7high3lows.vcf;
-filter=$(cat $WORK/SAEVA_outputs/update/results-7high3lows.vcf | cut -f2);
+filter=$(cat $WORK/SAEVA_outputs/changes/7high3lows/2/snpEff_outputs/results-7high3lows.vcf | cut -f2);
 filter=$(echo $filter | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/1-snpEff_high0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/update/tempcommon-7high3lows.ann.vcf;
 cat $WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/1-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/header.vcf;
