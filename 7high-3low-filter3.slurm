@@ -5,7 +5,7 @@
 #SBATCH --error=7high-3low-filter3.%J.err
 #SBATCH --output=7high-3low-filter3.%J.out
 module load java/1.8
-cd $WORK/SAEVA_outputs/changes/7high3lows/1/
+cd $WORK/SAEVA_outputs/changes/7high3lows/3/
 mkdir filter
 cd snpEff_outputs/
 cat *.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/combined-7high3lows.vcf;
