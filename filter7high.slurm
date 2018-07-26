@@ -9,7 +9,7 @@ module load java/1.8
 cd $WORK/SAEVA_outputs/update/update-snpEff_outputs/
 echo `pwd`
 cat *_high*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/combined7high.vcf;
-cat $WORK/SAEVA_outputs/update/combinedhigh.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/update/countlineshigh7.txt
+cat $WORK/SAEVA_outputs/update/combined7high.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/update/countlineshigh7.txt
 result=$(cat $WORK/SAEVA_outputs/update/countlineshigh7.txt |grep -w "7"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/update/combined7high.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/update/common7high.ann.vcf
