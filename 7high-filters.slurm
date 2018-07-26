@@ -2,8 +2,8 @@
 #SBATCH --time=00:30:00   # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=1024      # Maximum memory required per CPU (in megabytes)
 #SBATCH --job-name=update_persisters
-#SBATCH --error=update_persisters.%J.err
-#SBATCH --output=update_persisters.%J.out
+#SBATCH --error=7high-filters.%J.err
+#SBATCH --output=7high-filters.%J.out
 module load java/1.8
 
 cd $WORK/SAEVA_outputs/update/update-snpEff_outputs/
