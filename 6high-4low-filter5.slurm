@@ -2,8 +2,8 @@
 #SBATCH --time=00:30:00   # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=1024      # Maximum memory required per CPU (in megabytes)
 #SBATCH --job-name=update_persisters
-#SBATCH --error=6high-4lows-filter3.%J.err
-#SBATCH --output=6high-4lows-filter3.%J.out
+#SBATCH --error=6high-4lows-filter5.%J.err
+#SBATCH --output=6high-4lows-filter5.%J.out
 module load java/1.8
 cd $WORK/SAEVA_outputs/changes/6highs4lows/5/
 mkdir filter
