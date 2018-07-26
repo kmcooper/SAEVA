@@ -5,8 +5,9 @@
 #SBATCH --error=7high-filters.%J.err
 #SBATCH --output=7high-filters.%J.out
 module load java/1.8
-
-cd $WORK/SAEVA_outputs/update/update-snpEff_outputs/
+cd $WORK/SAEVA_outputs/update/
+mkdir filter
+cd update-snpEff_outputs/
 echo `pwd`
 cat *high*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/combined7high.vcf;
 cat $WORK/SAEVA_outputs/update/combined7high.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/update/countlines7high.txt;
