@@ -18,8 +18,8 @@ cat $WORK/SAEVA_outputs/changes/6highs4lows/1/snpEff_outputs/combined-6highs4low
 filter=$(cat $WORK/SAEVA_outputs/changes/6highs4lows/1/results-6highs4lows.vcf | cut -f2);
 filter=$(echo $filter | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/changes/6highs4lows/1/snpEff_outputs/1-snpEff_high0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/changes/6highs4lows/1/tempcommon-6highs4lows.ann.vcf;
-cat $WORK/SAEVA_outputs/changes/6highs4lows/1/snpEff_outputs/1-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/changes/6highs4lows/1 /header.vcf;
-cat $WORK/SAEVA_outputs/changes/6highs4lows/1 /header.vcf $WORK/SAEVA_outputs/changes/6highs4lows/1/snpEff_outputs/tempcommon7high.ann.vcf> $WORK/SAEVA_outputs/changes/6highs4lows/1/common-6highs4lows.ann.vcf;
+cat $WORK/SAEVA_outputs/changes/6highs4lows/1/snpEff_outputs/1-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/changes/6highs4lows/1/header.vcf;
+cat $WORK/SAEVA_outputs/changes/6highs4lows/1/header.vcf $WORK/SAEVA_outputs/changes/6highs4lows/1/snpEff_outputs/tempcommon7high.ann.vcf> $WORK/SAEVA_outputs/changes/6highs4lows/1/common-6highs4lows.ann.vcf;
 rm $WORK/SAEVA_outputs/changes/6highs4lows/1/header.vcf
 cat $WORK/SAEVA_outputs/changes/6highs4lows/1/common-6highs4lows.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'MODERATE')"\ > $WORK/SAEVA_outputs/changes/6highs4lows/1/filter/high-moderate-4low.filter.vcf;
 cat $WORK/SAEVA_outputs/changes/6highs4lows/1/filter/high-moderate-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/changes/6highs4lows/1/filter/textfiles/high-moderate-4low.txt;
