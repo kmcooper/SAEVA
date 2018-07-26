@@ -30,16 +30,16 @@ cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/common-7high3lows.an
 ####################################################################################
 
 ##################################################
-cat *low*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/combined-lows-7high3lows.vcf;
-cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/combined-7high3lows-lows.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/countlines-7high3lows.txt;
+cat *low*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/combined-lows-7high3lows.vcf;
+cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/combined-7high3lows-lows.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/countlines-7high3lows.txt;
 result=$(cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/countlines-lows-7high3lows.txt |grep -w "3"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/combined-lows-7high3lows.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/results-7high3lows.vcf;
 filter=$(cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/results-lows-7high3lows.vcf | cut -f2);
 filter=$(echo $filter | sed 's/ /|/g')
-cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/3-snpEff_low0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/tempcommon-7high3lows.ann.vcf;
-cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/3-snpEff_low0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/header.vcf;
-cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/header.vcf $WORK/SAEVA_outputs/changes/7high3lows/1/snpEff_outputs/tempcommon7high.ann.vcf> $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/common-7high3lows.ann.vcf;
+cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/3-snpEff_low0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/tempcommon-7high3lows.ann.vcf;
+cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/3-snpEff_low0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/header.vcf;
+cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/header.vcf $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/tempcommon7high.ann.vcf> $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/common-7high3lows.ann.vcf;
 rm $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/header.vcf
 cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/common-lows-7high3lows.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'HIGH')"\ > $WORK/SAEVA_outputs/changes/7high3lows/3/filter/high-misssens-lows.filter.vcf;
 
@@ -49,4 +49,3 @@ cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/common-lows-7high3lo
 cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/common-lows-7high3lows.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'HIGH') | (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/changes/7high3lows/3/filter/high-and-misssens-lows.filter.vcf;
 cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/common-lows-7high3lows.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'HIGH')"\ > $WORK/SAEVA_outputs/changes/7high3lows/3/filter/high-lows.filter.vcf;
 cat $WORK/SAEVA_outputs/changes/7high3lows/3/snpEff_outputs/common-lows-7high3lows.ann.vcf| java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT='MISSENSE')"\ > $WORK/SAEVA_outputs/changes/7high3lows/3/filter/misssens-lows.filter.vcf;
-##
