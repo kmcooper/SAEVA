@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH --time=00:30:00   # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=1024      # Maximum memory required per CPU (in megabytes)
-#SBATCH --job-name=update_persisters
+#SBATCH --job-name=7high-filters
 #SBATCH --error=7high-filters.%J.err
 #SBATCH --output=7high-filters.%J.out
 module load java/1.8
@@ -16,7 +16,7 @@ cat $WORK/SAEVA_outputs/update/combined7high.vcf |egrep -w $result |cut --comple
 filter=$(cat $WORK/SAEVA_outputs/update/results7high.vcf | cut -f2);
 filter=$(echo $filter | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/update/tempcommon7high.ann.vcf;
-cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | grep '##'>header.vcf;
+cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/update/header.vcf;
 cat $WORK/SAEVA_outputs/update/header.vcf $WORK/SAEVA_outputs/update/tempcommon7high.ann.vcf> $WORK/SAEVA_outputs/update/common7high.ann.vcf;
 rm $WORK/SAEVA_outputs/update/header.vcf
 cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'HIGH')"\ > $WORK/SAEVA_outputs/update/filter/high-misssens-7high.filter.vcf;
