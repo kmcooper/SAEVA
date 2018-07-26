@@ -10,7 +10,7 @@ cd $WORK/SAEVA_outputs/update/update-snpEff_outputs/
 echo `pwd`
 cat *low*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/combined4low.vcf;
 cat $WORK/SAEVA_outputs/update/combined4low.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/update/countlines4low.txt;
-result=$(cat $WORK/SAEVA_outputs/update/countlines4low.txt |grep -w "7"|cut -f2);
+result=$(cat $WORK/SAEVA_outputs/update/countlines4low.txt |grep -w "4"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/update/combined4low.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/update/results4low.vcf;
 filter=$(cat $WORK/SAEVA_outputs/update/results4low.vcf | cut -f2);
