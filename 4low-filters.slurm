@@ -15,7 +15,7 @@ cat *low*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/update/com
 ##### remove the annotation information, remove uniq files and count them####
 cat $WORK/SAEVA_outputs/update/combined4low.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/update/countlines4low.txt;
 #### find mutations, which repeated 4 times ####
-result=$(cat $WORK/SAEVA_outputs/update/countlines4low.txt |grep -w "4"|cut -f2);
+result=$(cat $WORK/SAEVA_outputs/update/countlines4low.txt |grep -w "3"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
 ################
 cat $WORK/SAEVA_outputs/update/combined4low.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/update/results4low.vcf;
