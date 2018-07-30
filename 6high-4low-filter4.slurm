@@ -13,7 +13,7 @@ cd $WORK/SAEVA_outputs/changes/6high4lows/4/snpEff_outputs/
 ##### merge all high files together, sort, remove the headers, and save as combined6high4lows-4.vcf####
 cat *low*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/6high4lows/4/combined6high4lows-4.vcf;
 ##### remove the annotation information, remove uniq files and count them####
-cat $WORK/SAEVA_outputs/changes/6high4lows/4/combined6high4lows-4.vcf |cut -f -4|uniq -c |sort >$WORK/SAEVA_outputs/changes/6high4lows/4/countlines6high4lows-4.txt;
+cat $WORK/SAEVA_outputs/changes/6high4lows/4/combined6high4lows-4.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/changes/6high4lows/4/countlines6high4lows-4.txt;
 #### find mutations, which repeated 10 times ####
 result=$(cat $WORK/SAEVA_outputs/changes/6high4lows/4/countlines6high4lows-4.txt |grep -w "10"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
@@ -78,7 +78,7 @@ cat $WORK/SAEVA_outputs/changes/6high4lows/4/filter/stop-and-misssens-6high4lows
 ### for highs###
 ##################################################
 cat *high*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/6high4lows/4/combined-6high4lows-4-high.vcf;
-cat $WORK/SAEVA_outputs/changes/6high4lows/4/combined-6high4lows-4-high.vcf |cut -f -4|uniq -c |sort >$WORK/SAEVA_outputs/changes/6high4lows/4/countlines-6high4lows-high.txt;
+cat $WORK/SAEVA_outputs/changes/6high4lows/4/combined-6high4lows-4-high.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/changes/6high4lows/4/countlines-6high4lows-high.txt;
 result=$(cat $WORK/SAEVA_outputs/changes/6high4lows/4/countlines-6high4lows-high.txt |grep -w "6"|cut -f2);
 result=$(echo $result | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/changes/6high4lows/4/combined-6high4lows-4-high.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/changes/6high4lows/4/snpEff_outputs/results-6high4lows-high.vcf;
