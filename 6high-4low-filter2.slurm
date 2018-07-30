@@ -9,7 +9,7 @@ cd $WORK/SAEVA_outputs/changes/6high4lows/2/
 mkdir filter
 cd filter
 mkdir textfiles
-cd $WORK/SAEVA_outputs/changes/6high4lows/2/update-snpEff_outputs/
+cd $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/
 ##### merge all high files together, sort, remove the headers, and save as combined6high4lows.vcf####
 cat *low*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/6high4lows/2/combined6high4lows.vcf;
 ##### remove the annotation information, remove uniq files and count them####
@@ -22,8 +22,8 @@ cat $WORK/SAEVA_outputs/changes/6high4lows/2/combined6high4lows.vcf |egrep -w $r
 filter=$(cat $WORK/SAEVA_outputs/changes/6high4lows/2/results6high4lows.vcf | cut -f2);
 filter=$(echo $filter | sed 's/ /|/g')
 #### find the whole information of each repeated mutation in one file####
-cat $WORK/SAEVA_outputs/changes/6high4lows/2/update-snpEff_outputs/update-snpEff_high0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/changes/6high4lows/2/tempcommon6high4lows.ann.vcf;
-cat $WORK/SAEVA_outputs/changes/6high4lows/2/update-snpEff_outputs/update-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/changes/6high4lows/2/header.vcf;
+cat $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/2-snpEff_high0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/changes/6high4lows/2/tempcommon6high4lows.ann.vcf;
+cat $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/2-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/changes/6high4lows/2/header.vcf;
 cat $WORK/SAEVA_outputs/changes/6high4lows/2/header.vcf $WORK/SAEVA_outputs/changes/6high4lows/2/tempcommon6high4lows.ann.vcf> $WORK/SAEVA_outputs/changes/6high4lows/2/common6high4lows.ann.vcf;
 rm $WORK/SAEVA_outputs/changes/6high4lows/2/header.vcf
 
@@ -84,8 +84,8 @@ result=$(echo $result | sed 's/ /|/g')
 cat $WORK/SAEVA_outputs/changes/6high4lows/2/combined-6high4lows-high.vcf |egrep -w $result |cut --complement -f6,9,10 | sed 's/AB=.*;ANN=/ANN=/' |uniq > $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/results-6high4lows-high.vcf;
 filter=$(cat $WORK/SAEVA_outputs/changes/6high4lows/2/results-6high4lows-high.vcf | cut -f2);
 filter=$(echo $filter | sed 's/ /|/g')
-cat $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/1-snpEff_high0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/temphigh-6high4lows.ann.vcf;
-cat $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/1-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/changes/6high4lows/2/header.vcf;
+cat $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/2-snpEff_high0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/temphigh-6high4lows.ann.vcf;
+cat $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/2-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/changes/6high4lows/2/header.vcf;
 cat $WORK/SAEVA_outputs/changes/6high4lows/2/header.vcf $WORK/SAEVA_outputs/changes/6high4lows/2/snpEff_outputs/temphigh-6high4lows.ann.vcf> $WORK/SAEVA_outputs/changes/6high4lows/2/high-6high4lows.ann.vcf;
 rm $WORK/SAEVA_outputs/changes/6high4lows/2/header.vcf
 ############################################################################################################################
