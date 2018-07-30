@@ -43,10 +43,10 @@ cat $WORK/SAEVA_outputs/update/common4low.ann.vcf | java -jar $WORK/SAEVA_softwa
 cat $WORK/SAEVA_outputs/update/filter/modifier-4low.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/modifier-4low.txt;
 ### Find Missense mutations###
 cat $WORK/SAEVA_outputs/update/common4low.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT='MISSENSE')"\ > $WORK/SAEVA_outputs/update/filter/misssens-4low.filter.vcf;
-cat $WORK/SAEVA_outputs/update/filter/moderate-misssens-4low.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/ misssens-4low.txt;
+cat $WORK/SAEVA_outputs/update/filter/moderate-misssens-4low.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/misssens-4low.txt;
 ### Find High and Missense mutations###
 cat $WORK/SAEVA_outputs/update/common4low.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'HIGH') & (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/high-and-misssens-4low.filter.vcf;
-cat $WORK/SAEVA_outputs/update/filter/high-and-misssens-4low.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/high- and-misssens-4low.txt;
+cat $WORK/SAEVA_outputs/update/filter/high-and-misssens-4low.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/high-and-misssens-4low.txt;
 ### Find Moderate and Missense mutations###
 cat $WORK/SAEVA_outputs/update/common4low.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODERATE') & (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/moderate-and-misssens-4low.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/moderate-and-misssens-4low.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/moderate-and-misssens-4low.txt;
