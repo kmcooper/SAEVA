@@ -1,1 +1,0 @@
-sbatch Update-Persisters.slurm
