@@ -11,7 +11,7 @@ cd filter
 mkdir textfiles
 cd $WORK/SAEVA_outputs/changes/6high4lows/1/snpEff_outputs/
 ##### merge all high files together, sort, remove the headers, and save as combined6high4lows-1.vcf####
-cat *low*.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/6high4lows/1/combined6high4lows-1.vcf;
+cat *.vcf | sort | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/changes/6high4lows/1/combined6high4lows-1.vcf;
 ##### remove the annotation information, remove uniq files and count them####
 cat $WORK/SAEVA_outputs/changes/6high4lows/1/combined6high4lows-1.vcf |cut -f -5|uniq -c |sort >$WORK/SAEVA_outputs/changes/6high4lows/1/countlines6high4lows-1.txt;
 #### find mutations, which repeated 10 times ####
