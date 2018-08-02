@@ -22,11 +22,7 @@ cat $WORK/SAEVA_outputs/update/combined7high.vcf |egrep -w $result |cut --comple
 filter=$(cat $WORK/SAEVA_outputs/update/results7high.vcf | cut -f2);
 filter=$(echo $filter | sed 's/ /|/g')
 #### find the whole information of each repeated mutation in one file####
-cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/update/tempcommon7high.ann.vcf;
-cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | grep '##'>$WORK/SAEVA_outputs/update/header.vcf;
-cat $WORK/SAEVA_outputs/update/header.vcf $WORK/SAEVA_outputs/update/tempcommon7high.ann.vcf> $WORK/SAEVA_outputs/update/common7high.ann.vcf;
-rm $WORK/SAEVA_outputs/update/header.vcf
-
+cat $WORK/SAEVA_outputs/update/update-snpEff_outputs/update-snpEff_high0.ann.vcf | egrep $filter > $WORK/SAEVA_outputs/update/common7high.ann.vcf;
 
 ############################################################################################################################
 ### Find High impact mutations###
@@ -36,7 +32,7 @@ cat $WORK/SAEVA_outputs/update/filter/high-7high.filter.vcf | grep -v '##' > $WO
 cat $WORK/SAEVA_outputs/update/common7high.ann.vcf| java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'MODERATE')"\ > $WORK/SAEVA_outputs/update/filter/moderate-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/moderate-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/moderate-7high.txt;
 ### Find Low impact mutations###
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf| java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = LOW)"\ > $WORK/SAEVA_outputs/update/filter/low-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf| java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT = 'LOW')"\ > $WORK/SAEVA_outputs/update/filter/low-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/low-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/low-7high.txt;
 ### Find modifiers mutations###
 cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT='MODIFIER')"\ > $WORK/SAEVA_outputs/update/filter/modifier-7high.filter.vcf;
@@ -51,26 +47,44 @@ cat $WORK/SAEVA_outputs/update/filter/high-and-misssens-7high.filter.vcf | grep 
 cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODERATE') & (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/moderate-and-misssens-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/moderate-and-misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/moderate-and-misssens-7high.txt;
 ### Find Low and Missense mutations###
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = LOW) & (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/low-and-misssens-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'LOW') & (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/low-and-misssens-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/low-and-misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/low-and-misssens-7high.txt;
 ### Find Modifier and Missense mutations###
 cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODIFIER') & (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/modifier-and-misssens-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/modifier-and-misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/modifier-and-misssens-7high.txt;
 ### Find Synonymous mutations###
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT=SYNONYMOUS)"\ > $WORK/SAEVA_outputs/update/filter/synonymous-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].IMPACT='SYNONYMOUS')"\ > $WORK/SAEVA_outputs/update/filter/synonymous-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/synonymous-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/synonymous-7high.txt;
 ### Find Synonymous and Modifier mutations###
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODIFIER') & (ANN[*].IMPACT= SYNONYMOUS))"\ > $WORK/SAEVA_outputs/update/filter/modifier-and-synonymous-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODIFIER') & (ANN[*].IMPACT= 'SYNONYMOUS'))"\ > $WORK/SAEVA_outputs/update/filter/modifier-and-synonymous-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/modifier-and-synonymous-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/modifier-and-synonymous-7high.txt;
 ### Find Synonymous and High mutations###
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODIFIER') & (ANN[*].IMPACT= SYNONYMOUS))"\ > $WORK/SAEVA_outputs/update/filter/high-and-synonymous-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODIFIER') & (ANN[*].IMPACT= 'SYNONYMOUS'))"\ > $WORK/SAEVA_outputs/update/filter/high-and-synonymous-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/high-and-synonymous-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/high-and-synonymous-7high.txt;
 ### Find Synonymous and low mutations###
-cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODIFIER') & (ANN[*].IMPACT= SYNONYMOUS))"\ > $WORK/SAEVA_outputs/update/filter/low-and-synonymous-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].IMPACT = 'MODIFIER') & (ANN[*].IMPACT= 'SYNONYMOUS'))"\ > $WORK/SAEVA_outputs/update/filter/low-and-synonymous-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/low-and-synonymous-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/low-and-synonymous-7high.txt;
+### Find DownStream mutations###
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].EFFECT has 'downstream')"\ > $WORK/SAEVA_outputs/update/filter/downstream-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/downstream7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/downstream-7high.txt;
+### Find DownStream and High mutations###
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].EFFECT has 'downstream') & (ANN[*].IMPACT='HIGH'))"\ > $WORK/SAEVA_outputs/update/filter/downstream-and-high-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/downstream-and-high-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/downstream-and-high-7high.txt;
+### Find DownStream and moderate mutations###
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].EFFECT has 'downstream') & (ANN[*].IMPACT='MODERATE'))"\ > $WORK/SAEVA_outputs/update/filter/downstream-and-moderate-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/downstream-and-moderate-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/downstream-and-moderate-7high.txt;
 ### Find DownStream and Missense mutations###
 cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].EFFECT has 'downstream') & (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/downstream-and-misssens-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/downstream-and-misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/downstream-and-misssens-7high.txt;
+### Find Stop mutations###
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "(ANN[*].EFFECT has 'stop_gained')"\ > $WORK/SAEVA_outputs/update/filter/stop-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/stop-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/stop7high.txt;
+### Find Stop and High mutations###
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].EFFECT has 'stop_gained') & (ANN[*].IMPACT='HIGH'))"\ > $WORK/SAEVA_outputs/update/filter/stop-and-high-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/stop-and-high-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/stop-and-high-7high.txt;
 ### Find Stop and Missense mutations###
 cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].EFFECT has 'stop_gained') & (ANN[*].IMPACT='MISSENSE'))"\ > $WORK/SAEVA_outputs/update/filter/stop-and-misssens-7high.filter.vcf;
 cat $WORK/SAEVA_outputs/update/filter/stop-and-misssens-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/stop-and-misssens-7high.txt;
+### Find Stop and Moderate mutations###
+cat $WORK/SAEVA_outputs/update/common7high.ann.vcf | java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar filter \ "((ANN[*].EFFECT has 'stop_gained') & (ANN[*].IMPACT='MODERATE'))"\ > $WORK/SAEVA_outputs/update/filter/stop-and-moderate-7high.filter.vcf;
+cat $WORK/SAEVA_outputs/update/filter/stop-and-moderate-7high.filter.vcf | grep -v '##' > $WORK/SAEVA_outputs/update/filter/textfiles/stop-and-moderate-7high.txt;
