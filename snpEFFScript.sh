@@ -5,6 +5,4 @@ unzip snpEff_latest_core.zip
 rm snpEff_latest_core.zip
 
 
-cd $WORK/SAEVA
-sbatch update-snpEff.slurm
 
