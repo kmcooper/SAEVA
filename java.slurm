@@ -7,4 +7,7 @@
 
 module load java/1.8
 
-java -Xmx4g -jar /work/biocore/kimia/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar annotate -dbsnp $WORK/SAEVA_outputs/new/outputs/high-HSS12071M1.vcf > $WORK/SAEVA_outputs/new/x.dbSnp.vcf
+#java -Xmx4g -jar snpEff.jar databasejava -Xmx4g -jar /work/biocore/kimia/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar annotate -dbsnp $WORK/SAEVA_outputs/new/outputs/high-HSS12071M1.vcf > $WORK/SAEVA_outputs/new/x.dbSnp.vcf
+
+
+cat $WORK/SAEVA_outputs/new/outputs/high-HSS12071M1.vcf| java -jar $WORK/SAEVA_softwares/snpEFF/snpEff/SnpSift.jar annotate -dbsnp $WORK/SAEVA_outputs/new/outputs/high-HSS12071M1.vcf > $WORK/SAEVA_outputs/new/x.dbSnp.vcf
