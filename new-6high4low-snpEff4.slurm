@@ -1,9 +1,9 @@
 #!/bin/sh
 #SBATCH --time=05:00:00   # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=8192      # Maximum memory required per CPU (in megabytes)
-#SBATCH --job-name=snpEff4-6high4low
-#SBATCH --error=snpEff4-6high4low.%J.err
-#SBATCH --output=snpEff4-6high4low.%J.out
+#SBATCH --job-name=snpEff-4-6high4low
+#SBATCH --error=snpEff-4-6high4low.%J.err
+#SBATCH --output=snpEff-4-6high4low.%J.out
 cd $WORK/SAEVA_outputs/new/
 mkdir 6high4low
 cd 6high4low
@@ -12,7 +12,7 @@ mkdir 4
 ## included 24,23,21,20,18,17 as High
 ## included 22,19,16,14 as low
 module load bcftools/1.8
-bcftools isec $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman79414A1_S23_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman99624A1_S20_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman37712B1_S21_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman60383B1_S18_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman62129B1_S17_q5000_dp250.vcf.gz -p $WORK/SAEVA_outputs/new/6high4low/4/high -n=6;
+bcftools isec $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman79414A1_S23_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman37712B1_S21_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman99624A1_S20_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman60383B1_S18_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman62129B1_S17_q5000_dp250.vcf.gz -p $WORK/SAEVA_outputs/new/6high4low/4/high -n=6;
 
 bcftools isec $WORK/SAEVA_outputs/bcfoutput/Silverman99382B1_S22_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman93954A1_S19_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman99624D1_S16_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman94232M1_S14_q5000_dp250.vcf.gz -p $WORK/SAEVA_outputs/new/6high4low/4/low -n=4;
 
@@ -49,9 +49,9 @@ mv $WORK/SAEVA/snpEff-genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEf
 mv $WORK/SAEVA/snpEff-summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-high-HSS12071M1-summary.html;
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/4/high/0001.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-high-Silverman79414A1_S23.ann.vcf;
-sed -i 's/^Chromosome/high-Silverman79414A1_S23/' $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-high- Silverman79414A1_S23.ann.vcf;
-mv $WORK/SAEVA/snpEff-genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-high- Silverman79414A1_S24-genes.txt;
-mv $WORK/SAEVA/snpEff-summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-high- Silverman79414A1_S24-summary.html;
+sed -i 's/^Chromosome/high-Silverman79414A1_S23/' $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-high-Silverman79414A1_S23.ann.vcf;
+mv $WORK/SAEVA/snpEff-genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-high-Silverman79414A1_S24-genes.txt;
+mv $WORK/SAEVA/snpEff-summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-high-Silverman79414A1_S24-summary.html;
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/4/high/0002.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-high-Silverman37712B1_S21.ann.vcf;
 sed -i 's/^Chromosome/high-Silverman37712B1_S21/' $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-high-Silverman37712B1_S21.ann.vcf;
@@ -65,8 +65,8 @@ mv $WORK/SAEVA/snpEff-summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/sn
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/4/high/0004.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-high- Silverman60383B1_S18.ann.vcf;
 sed -i 's/^Chromosome/high-Silverman60383B1_S18/' $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-high- Silverman60383B1_S18.ann.vcf;
-mv $WORK/SAEVA/snpEff-genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-high- Silverman60383B1_S18-genes.txt;
-mv $WORK/SAEVA/snpEff-summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-high- Silverman60383B1_S18-summary.html;
+mv $WORK/SAEVA/snpEff-genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-high-Silverman60383B1_S18-genes.txt;
+mv $WORK/SAEVA/snpEff-summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-high-Silverman60383B1_S18-summary.html;
 
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/4/high/0005.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-high-Silverman62129B1_S17.ann.vcf;
