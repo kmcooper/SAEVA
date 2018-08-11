@@ -1,9 +1,9 @@
 #!/bin/sh
 #SBATCH --time=05:00:00   # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=8192      # Maximum memory required per CPU (in megabytes)
-#SBATCH --job-name=snpEff2-6high4low
-#SBATCH --error=snpEff2-6high4low.%J.err
-#SBATCH --output=snpEff2-6high4low.%J.out
+#SBATCH --job-name=snpEff-2-6high4low
+#SBATCH --error=snpEff-2-6high4low.%J.err
+#SBATCH --output=snpEff-2-6high4low.%J.out
 cd $WORK/SAEVA_outputs/new/
 mkdir 6high4low
 cd 6high4low
@@ -49,9 +49,9 @@ mv $WORK/SAEVA/snpEff-genes.txt $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEf
 mv $WORK/SAEVA/snpEff-summary.html $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-summary/snpEff-high-HSS12071M1-summary.html;
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/2/high/0001.vcf > $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-high-Silverman79414A1_S23.ann.vcf;
-sed -i 's/^Chromosome/high-Silverman79414A1_S23/' $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-high- Silverman79414A1_S23.ann.vcf;
-mv $WORK/SAEVA/snpEff-genes.txt $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-gene/snpEff-high- Silverman79414A1_S23-genes.txt;
-mv $WORK/SAEVA/snpEff-summary.html $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-summary/snpEff-high- Silverman79414A1_S23-summary.html;
+sed -i 's/^Chromosome/high-Silverman79414A1_S23/' $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-high-Silverman79414A1_S23.ann.vcf;
+mv $WORK/SAEVA/snpEff-genes.txt $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-gene/snpEff-high-Silverman79414A1_S23-genes.txt;
+mv $WORK/SAEVA/snpEff-summary.html $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-summary/snpEff-high-Silverman79414A1_S23-summary.html;
 
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/2/high/0002.vcf > $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-high-Silverman37712B1_S21.ann.vcf;
 sed -i 's/^Chromosome/high-Silverman37712B1_S21/' $WORK/SAEVA_outputs/new/6high4low/2/snpEff/snpEff-high-Silverman37712B1_S21.ann.vcf;
