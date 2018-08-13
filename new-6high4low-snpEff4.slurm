@@ -74,20 +74,25 @@ sed -i 's/^Chromosome/high-Silverman62129B1_S17/' $WORK/SAEVA_outputs/new/6high4
 mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-high-Silverman62129B1_S17-genes.txt;
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-high-Silverman62129B1_S17-summary.html;
 
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low1/low/0000.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman94232M1_S14.ann.vcf;
-sed -i 's/^Chromosome/low-Silverman99382B1_S22/' $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman94232M1_S14.ann.vcf;
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-low-Silverman94232M1_S14-genes.txt;
-mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-low-Silverman94232M1_S14-summary.html;
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/3/low/0000.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman99382B1_S22.ann.vcf;
+sed -i 's/^Chromosome/low-Silverman99382B1_S22/' $WORK/SAEVA_outputs/new/new/6high4low/3/snpEff/snpEff-low-Silverman99382B1_S22.ann.vcf;
+mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-low-Silverman99382B1_S22-genes.txt;
+mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-low-Silverman99382B1_S22-summary.html;
 
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/4/low/0001.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman93954A1_S19.ann.vcf;
-sed -i 's/^Chromosome/low-Silverman93954A1_S19/' $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman93954A1_S19.ann.vcf;
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/3/low/0001.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman93954A1_S19.ann.vcf;
+sed -i 's/^Chromosome/low-Silverman93954A1_S19/' $WORK/SAEVA_outputs/new/snpEff/snpEff-low-Silverman93954A1_S19.ann.vcf;
 mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-low-Silverman93954A1_S19-genes.txt;
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-low-Silverman93954A1_S19-summary.html;
 
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/4/low/0002.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman99624D1_S16.ann.vcf;
-sed -i 's/^Chromosome/low-Silverman99624D1_S16/' $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman99624D1_S16.ann.vcf;
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/3/low/0002.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman99624D1_S16.ann.vcf;
+sed -i 's/^Chromosome/low-Silverman99624D1_S16/' $WORK/SAEVA_outputs/new/6high4low/3/snpEff/snpEff-low-Silverman99624D1_S16.ann.vcf;
 mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-low-Silverman99624D1_S16-genes.txt;
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-low-Silverman99624D1_S16-summary.html;
+
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/3/low/0003.vcf > $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-low-Silverman94232M1_S14.ann.vcf;
+sed -i 's/^Chromosome/low-Silverman94232M1_S14/' $WORK/SAEVA_outputs/new/snpEff/snpEff-low-Silverman94232M1_S14.ann.vcf;
+mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-gene/snpEff-low-Silverman94232M1_S14-genes.txt;
+mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/new/6high4low/4/snpEff/snpEff-summary/snpEff-low-Silverman94232M1_S14-summary.html;
 
 ################################################################################################################################################
 ###########################################                     combination                  ########################################
@@ -96,16 +101,16 @@ cd $WORK/SAEVA_outputs/new/
 mkdir textfile
 ###############               merge all files together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/6high4low/4/snpEff/*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/6high4low/4/combined6high4low-4.vcf;
-cat $WORK/SAEVA_outputs/new/6high4low/4/combined6high4low-4.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/6high4low/4/clean-combined6high4low.vcf;
-cp $WORK/SAEVA_outputs/new/6high4low/4/combined6high4low-4.vcf $WORK/SAEVA_outputs/new/6high4low/4/textfile/clean-combined6high4low-4.txt;
+cat $WORK/SAEVA_outputs/new/combined6high4low-4.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined6high4low.vcf;
+cp $WORK/SAEVA_outputs/new/combined6high4low-4.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined6high4low-4.txt;
 ################################################################################################################
 ###############               merge all highs together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/6high4low/4/snpEff/*high*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/textfile/combined6high-4.vcf;
-cat $WORK/SAEVA_outputs/new/textfile/combined6high-4.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/textfile/clean-combined6high-4.vcf;
-cp $WORK/SAEVA_outputs/new/textfile/clean-combined6high-4.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined6high-4.txt;
+cat $WORK/SAEVA_outputs/new/combined6high-4.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined6high-4.vcf;
+cp $WORK/SAEVA_outputs/new/clean-combined6high-4.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined6high-4.txt;
 ################################################################################################################
 ###############               merge all lows together,remove headers and sort based on positions      #########
-cat $WORK/SAEVA_outputs/new/6high4low/4/snpEff/*low*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/textfile/combined4low-4.vcf;
-cat $WORK/SAEVA_outputs/new/6high4low/4/combined4low-4.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/textfile/clean-combined4low-4.vcf;
-cp $WORK/SAEVA_outputs/new/6high4low/4/clean-combined4low-4.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined4low-4.txt;
+#cat $WORK/SAEVA_outputs/new/6high4low/4/snpEff/*low*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/textfile/combined4low-4.vcf;
+#cat $WORK/SAEVA_outputs/new/combined4low-4.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined4low-4.vcf;
+#cp $WORK/SAEVA_outputs/new/clean-combined4low-4.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined4low-4.txt;
 
