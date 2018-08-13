@@ -64,7 +64,7 @@ sed -i 's/^Chromosome/high-Silverman60383B1_S18/' $WORK/SAEVA_outputs/new/6high4
 mv $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff_genes.txt $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-gene/snpEff-high-Silverman60383B1_S18-genes.txt;
 mv $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff_summary.html $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-summary/snpEff-high-Silverman60383B1_S18-summary.html;
 
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/7high3lows/1/high/0004.vcf > $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-high-Silverman62129B1_S17.ann.vcf;
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/new/6high4low/1/high/0004.vcf > $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-high-Silverman62129B1_S17.ann.vcf;
 sed -i 's/^Chromosome/high-Silverman62129B1_S17/' $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-high-Silverman62129B1_S17.ann.vcf;
 mv $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff_genes.txt $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-gene/snpEff-high-Silverman62129B1_S17-genes.txt;
 mv $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff_summary.html $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-summary/snpEff-high-Silverman62129B1_S17-summary.html;
