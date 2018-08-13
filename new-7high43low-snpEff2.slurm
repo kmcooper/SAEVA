@@ -7,7 +7,7 @@
 cd $WORK/SAEVA_outputs/new/
 mkdir 7high3low
 cd 7high3low
-mkdir 1
+mkdir 2
 
 ## included 24,23,21,18,20,17,15 as High
 ## included 22,19,14 as low
@@ -36,7 +36,7 @@ sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/2/low/0003.vcf;
 ######################################################################################################################
 ########################### make directories for snpEff output file, genes and summary of analysis #############################
 ######################################################################################################################
-cd 1
+cd 2
 mkdir snpEff
 cd snpEff
 mkdir snpEff-gene
