@@ -10,3 +10,4 @@ sbatch new-7high3low-snpEff1.slurm;
 sbatch new-7high3low-snpEff2.slurm;
 sbatch new-7high3low-snpEff3.slurm;
 sbatch new-7high3low-snpEff4.slurm;
+
