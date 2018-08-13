@@ -1,9 +1,9 @@
 #!/bin/sh
 #SBATCH --time=05:00:00   # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=8192      # Maximum memory required per CPU (in megabytes)
-#SBATCH --job-name= snpEff-4-7high3low
-#SBATCH --error=snpEff-4-7high3low.%J.err
-#SBATCH --output= snpEff-4-7high3low.%J.out
+#SBATCH --job-name=snpEff4-7high3low
+#SBATCH --error=snpEff4-7high3low.%J.err
+#SBATCH --output= snpEff4-7high3low.%J.out
 cd $WORK/SAEVA_outputs/new/
 mkdir 7high3low
 cd 7high3low
