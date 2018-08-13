@@ -3,7 +3,7 @@
 #SBATCH --mem-per-cpu=8192      # Maximum memory required per CPU (in megabytes)
 #SBATCH --job-name=snpEff4-7high3low
 #SBATCH --error=snpEff4-7high3low.%J.err
-#SBATCH --output= snpEff4-7high3low.%J.out
+#SBATCH --output=snpEff4-7high3low.%J.out
 cd $WORK/SAEVA_outputs/new/
 mkdir 7high3low
 cd 7high3low
