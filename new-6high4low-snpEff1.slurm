@@ -95,16 +95,16 @@ cd $WORK/SAEVA_outputs/new/
 mkdir textfile
 ###############               merge all files together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/6high4low/1/snpEff/*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/6high4low/1/combined6high4low-1.vcf;
-cat $WORK/SAEVA_outputs/new/6high4low/1/combined6high4low-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/6high4low/1/clean-combined6high4low.vcf;
-cp $WORK/SAEVA_outputs/new/6high4low/1/combined6high4low-1.vcf $WORK/SAEVA_outputs/new/6high4low/1/textfile/clean-combined6high4low-1.txt;
+cat $WORK/SAEVA_outputs/new/combined6high4low-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined6high4low-1.vcf;
+cp $WORK/SAEVA_outputs/new/clean-combined6high4low-1.vcf $WORK/SAEVA_outputs/new/6high4low/1/textfile/clean-combined6high4low-1.txt;
 ################################################################################################################
 ###############               merge all highs together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/6high4low/1/snpEff/*high*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/textfile/combined6high-1.vcf;
-cat $WORK/SAEVA_outputs/new/textfile/combined6high-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/textfile/clean-combined6high-1.vcf;
-cp $WORK/SAEVA_outputs/new/textfile/clean-combined6high-1.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined6high-1.txt;
+cat $WORK/SAEVA_outputs/new/combined6high-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined6high-1.vcf;
+cp $WORK/SAEVA_outputs/new/clean-combined6high-1.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined6high-1.txt;
 ################################################################################################################
 ###############               merge all lows together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/6high4low/1/snpEff/*low*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/textfile/combined4low-1.vcf;
-cat $WORK/SAEVA_outputs/new/6high4low/1/combined4low-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/textfile/clean-combined4low-1.vcf;
-cp $WORK/SAEVA_outputs/new/6high4low/1/clean-combined4low-1.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined4low-1.txt;
+cat $WORK/SAEVA_outputs/new/combined4low-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined4low-1.vcf;
+cp $WORK/SAEVA_outputs/new/clean-combined4low-1.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined4low-1.txt;
 
