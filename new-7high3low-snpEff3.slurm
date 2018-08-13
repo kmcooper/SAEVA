@@ -29,10 +29,10 @@ sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/3/high/0002.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/3/high/0003.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/3/high/0004.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/3/high/0005.vcf;
+sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/3/high/0006.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/3/low/0000.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/3/low/0001.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/3/low/0002.vcf;
-sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/new/7high3low/3/low/0003.vcf;
 ######################################################################################################################
 ########################### make directories for snpEff output file, genes and summary of analysis #############################
 ######################################################################################################################
@@ -100,17 +100,17 @@ mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/new/7high3low/3/snpEff/sn
 cd $WORK/SAEVA_outputs/new/ 
 mkdir textfile
 ###############               merge all files together,remove headers and sort based on positions      #########
-cat $WORK/SAEVA_outputs/new/7high3low/3/snpEff/*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/7high3low/3/combined7high3low-3.vcf;
-cat $WORK/SAEVA_outputs/new/7high3low/3/combined7high3low-3.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/7high3low/3/clean-combined7high3low.vcf;
-cp $WORK/SAEVA_outputs/new/7high3low/3/combined7high3low-3.vcf $WORK/SAEVA_outputs/new/7high3low/3/textfile/clean-combined7high3low-3.txt;
+cat $WORK/SAEVA_outputs/new/7high3low/3/snpEff/*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined7high3low-3.vcf;
+cat $WORK/SAEVA_outputs/new/combined7high3low-3.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined7high3low.vcf;
+cp $WORK/SAEVA_outputs/new/combined7high3low-3.vcf $WORK/SAEVA_outputs/new/clean-combined7high3low-3.txt;
 ################################################################################################################
 ###############               merge all highs together,remove headers and sort based on positions      #########
-cat $WORK/SAEVA_outputs/new/7high3low/3/snpEff/*high*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/textfile/combined7high-3.vcf;
-cat $WORK/SAEVA_outputs/new/textfile/combined7high-3.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/textfile/clean-combined7high-3.vcf;
-cp $WORK/SAEVA_outputs/new/textfile/clean-combined7high-3.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined7high-3.txt;
+#cat $WORK/SAEVA_outputs/new/7high3low/3/snpEff/*high*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/textfile/combined7high-3.vcf;
+#cat $WORK/SAEVA_outputs/new/combined7high-3.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/textfile/clean-combined7high-3.vcf;
+#cp $WORK/SAEVA_outputs/new/clean-combined7high-3.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined7high-3.txt;
 ################################################################################################################
 ###############               merge all lows together,remove headers and sort based on positions      #########
-cat $WORK/SAEVA_outputs/new/7high3low/3/snpEff/*low*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/textfile/combined3low-3.vcf;
-cat $WORK/SAEVA_outputs/new/7high3low/3/combined4low-3.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/textfile/clean-combined3low-3.vcf;
-cp $WORK/SAEVA_outputs/new/7high3low/3/clean-combined3low-3.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined3low-3.txt;
+cat $WORK/SAEVA_outputs/new/7high3low/3/snpEff/*low*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined3low-3.vcf;
+cat $WORK/SAEVA_outputs/new/combined4low-3.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined3low-3.vcf;
+cp $WORK/SAEVA_outputs/new/clean-combined3low-3.vcf $WORK/SAEVA_outputs/new/clean-combined3low-3.txt;
 
