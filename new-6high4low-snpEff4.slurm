@@ -102,7 +102,7 @@ mkdir textfile
 ###############               merge all files together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/6high4low/4/snpEff/*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined6high4low-4.vcf;
 cat $WORK/SAEVA_outputs/new/combined6high4low-4.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined6high4low.vcf;
-cp $WORK/SAEVA_outputs/new/combined6high4low-4.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined6high4low-4.txt;
+cp $WORK/SAEVA_outputs/new/clean-combined6high4low-4.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined6high4low-4.txt;
 ################################################################################################################
 ###############               merge all highs together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/6high4low/4/snpEff/*high*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined6high-4.vcf;
