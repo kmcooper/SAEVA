@@ -13,7 +13,6 @@ mkdir 1
 ## included 22,19,16 as low
 
 module load bcftools/1.8
-module load bcftools/1.8
 bcftools isec $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman79414A1_S23_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman37712B1_S21_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman99624A1_S20_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman60383B1_S18_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman62129B1_S17_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman99382M1_S15_q5000_dp250.vcf.gz -p $WORK/SAEVA_outputs/new/7high3low/1/high -n=7;
 
 bcftools isec $WORK/SAEVA_outputs/bcfoutput/Silverman99382B1_S22_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman93954A1_S19_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/bcfoutput/Silverman99624D1_S16_q5000_dp250.vcf.gz -p $WORK/SAEVA_outputs/new/7high3low/1/low -n=3;
@@ -102,7 +101,7 @@ mkdir textfile
 ###############               merge all files together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/7high3low/1/snpEff/*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined7high3low-1.vcf;
 cat $WORK/SAEVA_outputs/new/combined7high3low-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined7high3low.vcf;
-cp $WORK/SAEVA_outputs/new/combined7high3low-1.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined7high3low-1.txt;
+cp $WORK/SAEVA_outputs/new/clean-combined7high3low-1.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined7high3low-1.txt;
 ################################################################################################################
 ###############               merge all highs together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/7high3low/1/snpEff/*high*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined7high-1.vcf;
