@@ -111,6 +111,6 @@ cp $WORK/SAEVA_outputs/new/clean-combined7high-1.vcf $WORK/SAEVA_outputs/new/tex
 ################################################################################################################
 ###############               merge all lows together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/new/7high3low/1/snpEff/*low*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined3low-1.vcf;
-cat $WORK/SAEVA_outputs/new/combined4low-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined3low-1.vcf;
+cat $WORK/SAEVA_outputs/new/combined3low-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined3low-1.vcf;
 cp $WORK/SAEVA_outputs/new/clean-combined3low-1.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined3low-1.txt;
 
