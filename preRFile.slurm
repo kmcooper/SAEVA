@@ -22,27 +22,27 @@ bcftools isec $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz $WORK/
 ######################################################################################################################
 ######################### change chr in vcf file to Chromosome which is acceptable via snpEff ####################################
 ######################################################################################################################
-cp $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-HSS12071M1.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz |bcftools view > $WORK/SAEVA_outputs/result/high-HSS12071M1.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-HSS12071M1.vcf; 
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman79414A1_S23_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman79414A1_S23.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman79414A1_S23_q5000_dp250.vcf.gz|bcftools view> $WORK/SAEVA_outputs/result/high-Silverman79414A1_S23.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-Silverman79414A1_S23.vcf;  
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman37712B1_S21_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman37712B1_S21.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman37712B1_S21_q5000_dp250.vcf.gz |bcftools view> $WORK/SAEVA_outputs/result/high-Silverman37712B1_S21.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-Silverman37712B1_S21.vcf;
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman99624A1_S20_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman99624A1_S20.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman99624A1_S20_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman99624A1_S20.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-Silverman99624A1_S20.vcf;
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman60383B1_S18_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman60383B1_S18.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman60383B1_S18_q5000_dp250.vcf.gz |bcftools view> $WORK/SAEVA_outputs/result/high-Silverman60383B1_S18.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-Silverman60383B1_S18.vcf;
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman62129B1_S17_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman62129B1_S17.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman62129B1_S17_q5000_dp250.vcf.gz |bcftools view>  $WORK/SAEVA_outputs/result/high-Silverman62129B1_S17.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-Silverman62129B1_S17.vcf;
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman99382M1_S15_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman99382M1_S15.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman99382M1_S15_q5000_dp250.vcf.gz |bcftools view> $WORK/SAEVA_outputs/result/high-Silverman99382M1_S15.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-Silverman99382M1_S15.vcf;
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman99382B1_S22_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/low-Silverman99382B1_S22.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman99382B1_S22_q5000_dp250.vcf.gz |bcftools view> $WORK/SAEVA_outputs/result/low-Silverman99382B1_S22.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/low-Silverman99382B1_S22.vcf;
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman93954A1_S19_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/low-Silverman93954A1_S19.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman93954A1_S19_q5000_dp250.vcf.gz |bcftools view> $WORK/SAEVA_outputs/result/low-Silverman93954A1_S19.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/low-Silverman93954A1_S19.vcf;
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman99624D1_S16_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/low-Silverman99624D1_S16.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman99624D1_S16_q5000_dp250.vcf.gz |bcftools view> $WORK/SAEVA_outputs/result/low-Silverman99624D1_S16.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/low-Silverman99624D1_S16.vcf;
-cp $WORK/SAEVA_outputs/bcfoutput/Silverman94232M1_S14_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/low-Silverman94232M1_S14.vcf;
+gunzip -c $WORK/SAEVA_outputs/bcfoutput/Silverman94232M1_S14_q5000_dp250.vcf.gz |bcftools view> $WORK/SAEVA_outputs/result/low-Silverman94232M1_S14.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/low-Silverman94232M1_S14.vcf;
 ######################################################################################################################
 ########################### make directories for snpEff output file, genes and summary of analysis #############################
