@@ -47,6 +47,7 @@ sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/low-Silverman94232M1_S14.
 ######################################################################################################################
 ########################### make directories for snpEff output file, genes and summary of analysis #############################
 ######################################################################################################################
+cd $WORK/SAEVA_outputs/result 
 mkdir snpEff
 cd snpEff
 mkdir snpEff-gene
@@ -107,7 +108,7 @@ mv $WORK/SAEVA_outputs/result/snpEff/snpEff_summary.html $WORK/SAEVA_outputs/res
 
 ################################################################################################################################################
 ###########################################            combine to find common genes                ######################################
-cd $WORK/SAEVA_outputs/new/ 
+cd $WORK/SAEVA_outputs/result/ 
 mkdir textfile
 ###############               merge all files together,remove headers and sort based on positions      #########
 cat $WORK/SAEVA_outputs/result/snpEff/*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/result/combined7high4low.vcf;
