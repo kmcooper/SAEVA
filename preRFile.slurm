@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --time=05:00:00   # Run time in hh:mm:ss
+#SBATCH --time=02:00:00   # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=8192      # Maximum memory required per CPU (in megabytes)
 #SBATCH --job-name=snpEff1-7high3low
 #SBATCH --error=snpEff1-7high3low.%J.err
@@ -26,7 +26,7 @@ cp $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz $WORK/SAEVA_outpu
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-HSS12071M1.vcf; 
 cp $WORK/SAEVA_outputs/bcfoutput/Silverman79414A1_S23_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman79414A1_S23.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-Silverman79414A1_S23.vcf;  
-cd $WORK/SAEVA_outputs/bcfoutput/Silverman37712B1_S21_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman37712B1_S21.vcf;
+cp $WORK/SAEVA_outputs/bcfoutput/Silverman37712B1_S21_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman37712B1_S21.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-Silverman37712B1_S21.vcf;
 cp $WORK/SAEVA_outputs/bcfoutput/Silverman99624A1_S20_q5000_dp250.vcf.gz $WORK/SAEVA_outputs/result/high-Silverman99624A1_S20.vcf;
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/high-Silverman99624A1_S20.vcf;
