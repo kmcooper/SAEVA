@@ -19,7 +19,7 @@ bcftools isec $WORK/SAEVA_outputs/bcfoutput/HSS12071M1_q5000_dp250.vcf.gz $WORK/
 
 sed -i 's/^chr/Chromosome/' $WORK/SAEVA_outputs/result/changes/6high4low-3/*/*;
 
-cd $WORK/SAEVA_outputs/result/changes/6high4low-2/all/
+cd $WORK/SAEVA_outputs/result/changes/6high4low-3/all/
 mkdir snpEff
 
 module load java/1.8
