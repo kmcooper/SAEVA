@@ -24,6 +24,6 @@ mkdir snpEff
 
 module load java/1.8
 
-java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/result/changes/6high4low-2/0000.vcf > $WORK/SAEVA_outputs/result/changes/6high4low-2/all/snpEff/snpEff.ann.vcf
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/result/changes/7high3low-1/all/0000.vcf > $WORK/SAEVA_outputs/result/changes/6high4low-2/all/snpEff/snpEff.ann.vcf
 mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/result/changes/7high3low-1/snpEff/1-snpEff_genes.txt
 mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/result/changes/7high3low-1/snpEff/1-snpEff_summary.html
