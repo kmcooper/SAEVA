@@ -22,6 +22,15 @@ mkdir snpEff
 
 module load java/1.8
 
+
 java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/result/changes/7high3low-2/all/0000.vcf > $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff/snpEff.ann.vcf
-mv $WORK/SAEVA/snpEff_genes.txt $WORK/SAEVA_outputs/result/changes/7high3low-2/snpEff/2-snpEff_genes.txt
-mv $WORK/SAEVA/snpEff_summary.html $WORK/SAEVA_outputs/result/changes/7high3low-2/snpEff/2-snpEff_summary.html
+mv $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff_genes.txt $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff/2-snpEff_genes-all.txt
+mv $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff_summary.html $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff/2-snpEff_summary-all.html
+
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/result/changes/7high3low-2/high/0000.vcf > $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff/snpEffhigh.ann.vcf
+mv $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff_genes.txt $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff/2-snpEff_genes-high.txt
+mv $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff_summary.html $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff/2-snpEff_summary-high.html
+
+java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcus_aureus_subsp_aureus_nctc_8325 $WORK/SAEVA_outputs/result/changes/7high3low-2/low/0000.vcf > $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff/snpEfflow.ann.vcf
+mv $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff_genes.txt $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff/2-snpEff_genes-low.txt
+mv $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff_summary.html $WORK/SAEVA_outputs/result/changes/7high3low-2/all/snpEff/2-snpEff_summary-low.html
