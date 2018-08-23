@@ -135,3 +135,22 @@ java -Xmx4g -jar $WORK/SAEVA_softwares/snpEFF/snpEff/snpEff.jar -v Staphylococcu
 sed -i 's/^Chromosome/low-Silverman94232M1_S14/' $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-all-Silverman94232M1_S14.ann.vcf;
 mv $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff_genes.txt $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-gene/snpEff-all-Silverman94232M1_S14-genes.txt;
 mv $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff_summary.html $WORK/SAEVA_outputs/new/6high4low/1/snpEff/snpEff-summary/snpEff-all-Silverman94232M1_S14-summary.html;
+
+####################################################################################################################
+
+cd $WORK/SAEVA_outputs/new/ 
+mkdir textfile
+###############               merge all files together,remove headers and sort based on positions      #########
+cat $WORK/SAEVA_outputs/new/6high4low/1/snpEff/*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined6high4low-1.vcf;
+cat $WORK/SAEVA_outputs/new/combined6high4low-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined6high4low-1.vcf;
+cp $WORK/SAEVA_outputs/new/clean-combined6high4low-2.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined6high4low-1.txt;
+################################################################################################################
+###############               merge all highs together,remove headers and sort based on positions      #########
+cat $WORK/SAEVA_outputs/new/6high4low/1/snpEff/*high*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined6high-1.vcf;
+cat $WORK/SAEVA_outputs/new/combined6high-1.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined6high-1.vcf;
+cp $WORK/SAEVA_outputs/new/clean-combined6high-1.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined6high-1.txt;
+################################################################################################################
+###############               merge all lows together,remove headers and sort based on positions      #########
+#cat $WORK/SAEVA_outputs/new/6high4low/2/snpEff/*low*.vcf | sort -k2,2 | grep -v '##'| grep -v '#' >$WORK/SAEVA_outputs/new/combined4low-2.vcf;
+#cat $WORK/SAEVA_outputs/new/combined4low-2.vcf|grep -v '##' |cut -f1,2,4,5,6,8| sed 's/AB=.*;ANN=/ANN=/'> $WORK/SAEVA_outputs/new/clean-combined4low-2.vcf;
+#cp $WORK/SAEVA_outputs/new/clean-combined4low-2.vcf $WORK/SAEVA_outputs/new/textfile/clean-combined4low-2.txt;
