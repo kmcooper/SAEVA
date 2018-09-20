@@ -3,7 +3,7 @@
 ##### sh makedir.sh
 ##### sbatch trimmomatic.slurm
 ##### sh bwaScript.sh
-##### sh bamScript.sh
+##### sbatch bam.slurm
 ##### sh picardScript.sh
 ##### sh freebayesScript.sh
 ##### sh bcf-vcfScript.sh
