@@ -1,7 +1,7 @@
 ###follow these steps:
 
 ##### sh makedir.sh
-##### sh trimScript.sh
+##### sbatch trimmomatic.slurm
 ##### sh bwaScript.sh
 ##### sh bamScript.sh
 ##### sh picardScript.sh
